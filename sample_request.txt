@@ -1,0 +1,94 @@
+POST /generate-platinum-ppt HTTP/1.1
+Authorization: api_key
+Content-Length: 1425
+Content-Type: application/json
+Host: localhost:3000
+User-Agent: HTTPie
+
+{
+  "title": "Sample Elastic Proposal",
+  "version": "1",
+  "assessment": {
+    "eps": 100000,
+    "gbd": 100,
+    "retention":{
+      "hot": 30,
+      "warm": 60,
+      "cold": 0
+    },
+    "ml_nodes": 1,
+    "master_nodes": 0,
+    "buffer": 1.2
+  },
+  "grand_total": {
+    "gb":{
+      "hot": 2066,
+      "warm": 5323,
+      "cold": 0
+    },
+    "nodes":{
+      "hot": 3,
+      "warm": 4,
+      "cold": 0,
+      "total": 7
+    }
+  },
+  "custom_params": {
+    "node_size": {
+      "hot": 2048,
+      "warm": 10240,
+      "cold": 15360
+    },
+    "shard_total": {
+      "hot": 2,
+      "warm": 2,
+      "cold": 1
+    },
+    "usable": 0.8,
+    "number_of_kibana": 1,
+    "number_of_fleet_server": 1,
+    "number_of_logstash": 1
+  },
+  "requirements":{
+    "hot_nodes":{
+      "cpu": 16,
+      "memory": 64,
+      "storage": 2048
+    },
+    "warm_nodes":{
+      "cpu": 16,
+      "memory": 64,
+      "storage": 10240
+    },
+    "cold_nodes":{
+      "cpu": 16,
+      "memory": 64,
+      "storage": 15360
+    },
+    "master_nodes":{
+      "cpu": 4,
+      "memory": 16,
+      "storage": 512
+    },
+    "ml_nodes":{
+      "cpu": 16,
+      "memory": 64,
+      "storage": 1024
+    },
+    "kibana":{
+      "cpu": 4,
+      "memory": 8,
+      "storage": 500
+    },
+    "fleet_server":{
+      "cpu": 4,
+      "memory": 8,
+      "storage": 500
+    },
+    "logstash":{
+      "cpu": 16,
+      "memory": 32,
+      "storage": 1024
+    }
+  }
+}
